@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🌴 말레이시아 가족 여행 2025</title>
+  <title>🌴 말레이시아 가족 여행 2026</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Segoe UI', -apple-system, sans-serif; background: linear-gradient(135deg, #0891B2 0%, #164E63 100%); min-height: 100vh; }
@@ -49,7 +49,7 @@
     .hotel-box { background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%); border-radius: 12px; padding: 16px; margin-top: 16px; }
     .hotel-name { font-size: 1.1rem; font-weight: 700; color: #1E293B; }
     .hotel-rating { color: #F59E0B; font-size: 0.9rem; }
-    .hotel-features { font-size: 0.85rem; color: #64748B; margin: 8px 0; }
+    .hotel-features { font-size: 0.85rem; color: #64748B; margin: 8px 0; line-height: 1.6; }
     .hotel-price { background: linear-gradient(90deg, #0891B2, #06B6D4); color: white; padding: 10px 16px; border-radius: 8px; text-align: center; margin-top: 12px; }
     .hotel-price .amount { font-size: 1.3rem; font-weight: 700; }
     
@@ -96,6 +96,30 @@
     .route-info h4 { font-size: 1rem; color: #1E293B; }
     .route-info p { font-size: 0.85rem; color: #64748B; }
     
+    /* Daily Schedule */
+    .day-card { background: #F8FAFC; border-radius: 12px; padding: 16px; margin-bottom: 12px; border-left: 4px solid #0891B2; }
+    .day-card.solo { border-left-color: #F87171; background: #FEF2F2; }
+    .day-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .day-date { font-weight: 700; color: #1E293B; font-size: 1.1rem; }
+    .day-badge { background: #0891B2; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; }
+    .day-badge.solo { background: #DC2626; }
+    .day-schedule { font-size: 0.9rem; color: #475569; line-height: 1.8; }
+    .day-highlight { background: #FEF3C7; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+    
+    /* Restaurant */
+    .restaurant { display: flex; gap: 12px; padding: 12px; background: white; border-radius: 10px; margin-bottom: 8px; border: 1px solid #E2E8F0; }
+    .restaurant-icon { font-size: 1.8rem; }
+    .restaurant-info { flex: 1; }
+    .restaurant-name { font-weight: 700; color: #1E293B; }
+    .restaurant-menu { font-size: 0.85rem; color: #64748B; }
+    .restaurant-tip { font-size: 0.8rem; color: #0891B2; margin-top: 4px; }
+    
+    /* Checklist */
+    .checklist { list-style: none; }
+    .checklist li { padding: 10px 0; border-bottom: 1px solid #E2E8F0; display: flex; align-items: center; gap: 10px; }
+    .checklist li:last-child { border-bottom: none; }
+    .check-icon { font-size: 1.2rem; }
+    
     /* Footer */
     .footer { text-align: center; padding: 30px; color: rgba(255,255,255,0.7); font-size: 0.9rem; }
     
@@ -104,6 +128,8 @@
       .tabs { gap: 6px; }
       .tab { padding: 10px 14px; font-size: 0.85rem; }
       .stats { grid-template-columns: 1fr; }
+      .flight { flex-direction: column; text-align: center; }
+      .flight-route { flex-wrap: wrap; justify-content: center; }
     }
   </style>
 </head>
@@ -112,14 +138,16 @@
     <header class="header">
       <h1>🌴 말레이시아 가족 여행</h1>
       <p class="subtitle">KL → 랑카위 → 페낭</p>
-      <p class="dates">2025년 2월 11일 ~ 26일 (15박 16일)</p>
+      <p class="dates">2026년 2월 11일 ~ 26일 (15박 16일)</p>
     </header>
     
     <nav class="tabs">
       <button class="tab active" onclick="showSection('overview')">📋 개요</button>
-      <button class="tab" onclick="showSection('kl')">🏙️ 쿠알라룸푸르</button>
+      <button class="tab" onclick="showSection('kl')">🏙️ KL</button>
       <button class="tab" onclick="showSection('lgk')">🏝️ 랑카위</button>
       <button class="tab" onclick="showSection('pen')">🎨 페낭</button>
+      <button class="tab" onclick="showSection('daily')">📅 일정표</button>
+      <button class="tab" onclick="showSection('food')">🍜 맛집</button>
       <button class="tab" onclick="showSection('flight')">✈️ 항공</button>
       <button class="tab" onclick="showSection('budget')">💰 예산</button>
     </nav>
@@ -136,7 +164,7 @@
           <div class="stat-label">가족 인원</div>
         </div>
         <div class="stat">
-          <div class="stat-value">742만</div>
+          <div class="stat-value">~800만</div>
           <div class="stat-label">예상 비용</div>
         </div>
       </div>
@@ -160,15 +188,15 @@
           <div class="route-item">
             <div class="route-dot" style="background: #10B981;">🏝️</div>
             <div class="route-info">
-              <h4>랑카위 5박</h4>
-              <p>2/16~21 • 열대 섬 휴양</p>
+              <h4>랑카위 4박</h4>
+              <p>2/16~20 • 열대 섬 휴양 + CNY</p>
             </div>
           </div>
           <div class="route-item">
             <div class="route-dot" style="background: #F59E0B;">🎨</div>
             <div class="route-info">
-              <h4>페낭 5박</h4>
-              <p>2/21~26 • 솔로 육아 4박 포함</p>
+              <h4>페낭 6박</h4>
+              <p>2/20~26 • <strong style="color:#DC2626;">솔로육아 4박</strong></p>
             </div>
           </div>
         </div>
@@ -184,7 +212,11 @@
         <p style="color: #64748B;">어른 2명 + 첫째 9세 👦 + 둘째 4세 👧</p>
         <div class="alert">
           <div class="alert-title">👨‍👧‍👦 솔로 육아 기간</div>
-          <div class="alert-text">2/22 배우자 귀국 후 페낭에서 4박은 아빠+아이들만!</div>
+          <div class="alert-text">
+            <strong>2/21 저녁 21:10</strong> 아내 페낭 출발<br>
+            <strong>2/22~26 (4박)</strong> 아빠+아이들 페낭에서!<br>
+            <span style="font-size:0.85rem;">💡 숙소 이동: 2/22 Airbnb → OZO 호텔</span>
+          </div>
         </div>
       </div>
     </section>
@@ -196,27 +228,51 @@
           <span class="card-icon">🏙️</span>
           <div>
             <div class="card-title">쿠알라룸푸르</div>
-            <div class="card-subtitle">5박 • 2월 11일 ~ 16일</div>
+            <div class="card-subtitle">2/11 ~ 2/16 (5박)</div>
           </div>
         </div>
         
-        <div class="activity"><span class="activity-icon">🐠</span><div><div class="activity-name">아쿠아리아 KLCC</div><div class="activity-desc">대형 수족관, 터널 수조 체험</div></div></div>
-        <div class="activity"><span class="activity-icon">🎢</span><div><div class="activity-name">선웨이 라군</div><div class="activity-desc">워터파크 + 놀이공원 풀코스!</div></div></div>
-        <div class="activity"><span class="activity-icon">🦜</span><div><div class="activity-name">KL 버드파크</div><div class="activity-desc">3000마리 새들과 교감</div></div></div>
-        <div class="activity"><span class="activity-icon">👨‍🍳</span><div><div class="activity-name">키자니아 KL</div><div class="activity-desc">직업 체험 테마파크</div></div></div>
-        <div class="activity"><span class="activity-icon">🕌</span><div><div class="activity-name">바투동굴</div><div class="activity-desc">272계단 도전! (출발 당일 오전)</div></div></div>
+        <div class="activity">
+          <span class="activity-icon">🏢</span>
+          <div>
+            <div class="activity-name">페트로나스 트윈타워</div>
+            <div class="activity-desc">스카이브릿지 + KLCC 공원 놀이터</div>
+          </div>
+        </div>
+        <div class="activity">
+          <span class="activity-icon">🐠</span>
+          <div>
+            <div class="activity-name">아쿠아리아 KLCC</div>
+            <div class="activity-desc">90m 해저터널! 아이들 필수 코스</div>
+          </div>
+        </div>
+        <div class="activity">
+          <span class="activity-icon">🛕</span>
+          <div>
+            <div class="activity-name">바투 케이브</div>
+            <div class="activity-desc">272계단 + 힌두사원 (4세 아이 유의)</div>
+          </div>
+        </div>
+        <div class="activity">
+          <span class="activity-icon">🎢</span>
+          <div>
+            <div class="activity-name">선웨이 라군</div>
+            <div class="activity-desc">⭐ 워터파크 + 놀이공원 (하루 풀코스)</div>
+          </div>
+        </div>
         
         <div class="hotel-box">
-          <div class="hotel-name">🏨 Traders Hotel KLCC</div>
-          <div class="hotel-rating">⭐⭐⭐⭐⭐ 5성급</div>
+          <div class="hotel-name">🏨 Ascott Kuala Lumpur</div>
+          <div class="hotel-rating">⭐⭐⭐⭐⭐ 5성급 서비스드 레지던스</div>
           <div class="hotel-features">
-            ✓ 트윈타워 도보 1분<br>
-            ✓ 인피니티 풀 (야경 최고!)<br>
-            ✓ 아쿠아리아 직접 연결
+            ✓ KLCC 도보 10분<br>
+            ✓ 수영장 + 키즈풀<br>
+            ✓ 풀키친 + 세탁기<br>
+            ✓ 파빌리온몰 근접
           </div>
           <div class="hotel-price">
             <div>5박</div>
-            <div class="amount">80만원</div>
+            <div class="amount">~174만원</div>
           </div>
         </div>
       </div>
@@ -229,27 +285,51 @@
           <span class="card-icon">🏝️</span>
           <div>
             <div class="card-title">랑카위</div>
-            <div class="card-subtitle">5박 • 2월 16일 ~ 21일</div>
+            <div class="card-subtitle">2/16 ~ 2/20 (4박) 🧧 CNY</div>
           </div>
         </div>
         
-        <div class="activity"><span class="activity-icon">🚤</span><div><div class="activity-name">아일랜드 호핑 투어</div><div class="activity-desc">4개 섬 + 스노클링 체험</div></div></div>
-        <div class="activity"><span class="activity-icon">🚡</span><div><div class="activity-name">스카이캡 케이블카</div><div class="activity-desc">스카이브릿지 + 절경 파노라마</div></div></div>
-        <div class="activity"><span class="activity-icon">🦅</span><div><div class="activity-name">맹그로브 투어</div><div class="activity-desc">독수리 먹이주기 + 박쥐동굴</div></div></div>
-        <div class="activity"><span class="activity-icon">🐟</span><div><div class="activity-name">언더워터 월드</div><div class="activity-desc">터널 수족관 + 펭귄쇼</div></div></div>
-        <div class="activity"><span class="activity-icon">🏖️</span><div><div class="activity-name">판타이 체낭 해변</div><div class="activity-desc">일몰 감상 + 야시장 탐방</div></div></div>
+        <div class="activity">
+          <span class="activity-icon">🚡</span>
+          <div>
+            <div class="activity-name">스카이캡 케이블카</div>
+            <div class="activity-desc">스카이브릿지 + 절경! 오전 추천</div>
+          </div>
+        </div>
+        <div class="activity">
+          <span class="activity-icon">🏖️</span>
+          <div>
+            <div class="activity-name">탄중루 비치</div>
+            <div class="activity-desc">프라이빗 느낌, 아이들 물놀이</div>
+          </div>
+        </div>
+        <div class="activity">
+          <span class="activity-icon">🦅</span>
+          <div>
+            <div class="activity-name">독수리 광장</div>
+            <div class="activity-desc">랑카위 랜드마크 + 쿠아타운 산책</div>
+          </div>
+        </div>
+        <div class="activity">
+          <span class="activity-icon">🛍️</span>
+          <div>
+            <div class="activity-name">면세 쇼핑</div>
+            <div class="activity-desc">초콜릿, 주류 (면세섬!)</div>
+          </div>
+        </div>
         
         <div class="hotel-box">
-          <div class="hotel-name">🏨 Pelangi Beach Resort</div>
-          <div class="hotel-rating">⭐⭐⭐⭐ 4성급 리조트</div>
+          <div class="hotel-name">🏨 RIYAZ Lavanya 또는 동급</div>
+          <div class="hotel-rating">⭐⭐⭐⭐ 비치 리조트</div>
           <div class="hotel-features">
-            ✓ 해변 직접 연결<br>
-            ✓ 키즈풀 + 워터슬라이드<br>
-            ✓ 가족 여행객 인기 1위
+            ✓ 프라이빗 비치<br>
+            ✓ 인피니티풀<br>
+            ✓ 키즈클럽<br>
+            ⚠️ CNY 2/17-18 피크시즌
           </div>
           <div class="hotel-price" style="background: linear-gradient(90deg, #10B981, #34D399);">
-            <div>5박</div>
-            <div class="amount">90만원</div>
+            <div>4박</div>
+            <div class="amount">~80만원</div>
           </div>
         </div>
       </div>
@@ -262,39 +342,269 @@
           <span class="card-icon">🎨</span>
           <div>
             <div class="card-title">페낭</div>
-            <div class="card-subtitle">5박 • 2월 21일 ~ 26일</div>
+            <div class="card-subtitle">2/20 ~ 2/26 (6박)</div>
           </div>
-          <span style="background: #FEF3C7; color: #D97706; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-left: auto;">솔로 육아 4박</span>
         </div>
         
-        <div class="activity"><span class="activity-icon">🦋</span><div><div class="activity-name">엔토피아 나비농장</div><div class="activity-desc">1만5천 나비 + 곤충 체험관</div></div></div>
-        <div class="activity"><span class="activity-icon">🖼️</span><div><div class="activity-name">조지타운 스트릿아트</div><div class="activity-desc">유네스코 벽화 투어</div></div></div>
-        <div class="activity"><span class="activity-icon">🏊</span><div><div class="activity-name">호텔 수영장 Day</div><div class="activity-desc">솔로 육아 핵심 전략!</div></div></div>
-        <div class="activity"><span class="activity-icon">🛒</span><div><div class="activity-name">거니드라이브 쇼핑</div><div class="activity-desc">거니몰 + 호커센터</div></div></div>
+        <div class="activity">
+          <span class="activity-icon">🎨</span>
+          <div>
+            <div class="activity-name">조지타운 스트릿아트</div>
+            <div class="activity-desc">UNESCO 세계유산 + 벽화투어</div>
+          </div>
+        </div>
+        <div class="activity">
+          <span class="activity-icon">🚠</span>
+          <div>
+            <div class="activity-name">페낭힐</div>
+            <div class="activity-desc">푸니쿨라 + 360도 전망 (온라인 예약!)</div>
+          </div>
+        </div>
+        <div class="activity">
+          <span class="activity-icon">🛕</span>
+          <div>
+            <div class="activity-name">극락사 (Kek Lok Si)</div>
+            <div class="activity-desc">동남아 최대 불교사원 + 케이블카</div>
+          </div>
+        </div>
+        <div class="activity">
+          <span class="activity-icon">🦋</span>
+          <div>
+            <div class="activity-name">엔토피아 버터플라이팜</div>
+            <div class="activity-desc">아이들 좋아함! 실내 에어컨</div>
+          </div>
+        </div>
+        <div class="activity">
+          <span class="activity-icon">🏖️</span>
+          <div>
+            <div class="activity-name">바투 페링기 비치</div>
+            <div class="activity-desc">해변 + 야시장</div>
+          </div>
+        </div>
         
-        <div class="alert">
-          <div class="alert-title">👨‍👧‍👦 솔로 육아 전략</div>
+        <div class="alert" style="margin-top:16px; margin-bottom:16px;">
+          <div class="alert-title">🏨 숙소 분할 전략</div>
           <div class="alert-text">
-            ✓ 하루 1개 일정만!<br>
-            ✓ 오후는 무조건 휴식<br>
-            ✓ 수영장 매일 활용!
+            <strong>2/20-22 (2박):</strong> Airbnb 2BR (Landmark) - 4인 가족<br>
+            <strong>2/22-26 (4박):</strong> OZO Hotel - 솔로육아 (조식+서비스)<br>
+            <span style="font-size:0.8rem;">💡 2/22 오전 체크아웃 → 새 숙소 이동</span>
           </div>
         </div>
         
         <div class="hotel-box">
-          <div class="hotel-name">🏨 Jen Penang Georgetown</div>
-          <div class="hotel-rating">⭐⭐⭐⭐ 4성급</div>
+          <div class="hotel-name">🏨 OZO Georgetown</div>
+          <div class="hotel-rating">⭐⭐⭐⭐ 부티크 호텔</div>
           <div class="hotel-features">
+            ✓ 22층 루프탑 인피니티풀<br>
+            ✓ 조식 포함 (8세 무료)<br>
             ✓ 조지타운 중심<br>
-            ✓ 루프탑 수영장<br>
-            ✓ 호커센터 도보 5분<br>
-            <strong style="color: #DC2626;">✓ 솔로 육아 최적!</strong>
+            <strong style="color: #DC2626;">✓ 솔로육아 최적화!</strong>
           </div>
           <div class="hotel-price" style="background: linear-gradient(90deg, #F59E0B, #FBBF24);">
-            <div>5박</div>
-            <div class="amount">55만원</div>
+            <div>6박 (분할)</div>
+            <div class="amount">~42만원</div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- 일정표 Section -->
+    <section id="daily" class="section">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">📅</span>
+          <div>
+            <div class="card-title">페낭 6박 상세 일정</div>
+            <div class="card-subtitle">2/20 ~ 2/26</div>
+          </div>
+        </div>
+        
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-date">DAY 1 | 2/20 (금)</span>
+            <span class="day-badge">페낭 도착</span>
+          </div>
+          <div class="day-schedule">
+            🛬 랑카위 → 페낭 이동 (오전)<br>
+            🍜 뉴레인 호커 점심 (차퀘티아오!)<br>
+            🎨 조지타운 스트릿아트 투어<br>
+            🌅 거니드라이브 저녁 (락사, 사테)
+          </div>
+        </div>
+        
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-date">DAY 2 | 2/21 (토)</span>
+            <span class="day-badge" style="background:#F59E0B;">아내 출국</span>
+          </div>
+          <div class="day-schedule">
+            🚠 페낭힐 푸니쿨라 (오전)<br>
+            🛍️ 거니플라자 쇼핑 + 휴식<br>
+            🍽️ <span class="day-highlight">가족 마지막 저녁 (18:00)</span><br>
+            ✈️ <span class="day-highlight">아내 공항 이동 19:00 (MH1155 21:10)</span>
+          </div>
+        </div>
+        
+        <div class="day-card solo">
+          <div class="day-header">
+            <span class="day-date">DAY 3 | 2/22 (일)</span>
+            <span class="day-badge solo">솔로육아 시작</span>
+          </div>
+          <div class="day-schedule">
+            📦 <span class="day-highlight">Airbnb → OZO 호텔 이동 (10:00)</span><br>
+            🎨 스트릿아트 여유롭게<br>
+            🏊 호텔 루프탑 풀 (오후)<br>
+            🍜 간단한 저녁 + 일찍 취침
+          </div>
+        </div>
+        
+        <div class="day-card solo">
+          <div class="day-header">
+            <span class="day-date">DAY 4 | 2/23 (월)</span>
+            <span class="day-badge solo">솔로육아</span>
+          </div>
+          <div class="day-schedule">
+            🍳 호텔 조식 (스트레스 프리!)<br>
+            🦋 엔토피아 버터플라이팜<br>
+            😴 숙소 복귀 + 낮잠<br>
+            🏊 수영장 + 거니플라자 저녁
+          </div>
+        </div>
+        
+        <div class="day-card solo">
+          <div class="day-header">
+            <span class="day-date">DAY 5 | 2/24 (화)</span>
+            <span class="day-badge solo">비치 데이</span>
+          </div>
+          <div class="day-schedule">
+            🏖️ 바투 페링기 비치 (오전~오후)<br>
+            🍽️ 비치 레스토랑 점심<br>
+            🏊 호텔 풀에서 마무리<br>
+            🍜 숙소 근처 간단한 저녁
+          </div>
+        </div>
+        
+        <div class="day-card solo">
+          <div class="day-header">
+            <span class="day-date">DAY 6 | 2/25 (수)</span>
+            <span class="day-badge solo">마지막 관광</span>
+          </div>
+          <div class="day-schedule">
+            🛕 극락사 (Kek Lok Si)<br>
+            🍜 <span class="day-highlight">아이탐 아쌈 락사 (필수!)</span><br>
+            🏊 마지막 수영장<br>
+            📦 짐 패킹 + 일찍 취침
+          </div>
+        </div>
+        
+        <div class="day-card" style="border-left-color: #6366F1;">
+          <div class="day-header">
+            <span class="day-date">DAY 7 | 2/26 (목)</span>
+            <span class="day-badge" style="background:#6366F1;">귀국</span>
+          </div>
+          <div class="day-schedule">
+            ⏰ 06:00 기상!<br>
+            ✈️ 11:00 PEN → KUL (MH1143)<br>
+            ✈️ 13:25 KUL → ICN (MH38)<br>
+            🛬 <span class="day-highlight">20:55 인천 도착!</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 맛집 Section -->
+    <section id="food" class="section">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">🍜</span>
+          <div>
+            <div class="card-title">페낭 맛집 가이드</div>
+            <div class="card-subtitle">호커센터 + 키즈 프렌들리</div>
+          </div>
+        </div>
+        
+        <h3 style="margin: 16px 0 12px; color: #1E293B;">🥢 호커센터 (필수!)</h3>
+        
+        <div class="restaurant">
+          <span class="restaurant-icon">🍜</span>
+          <div class="restaurant-info">
+            <div class="restaurant-name">뉴레인 호커 (New Lane)</div>
+            <div class="restaurant-menu">차퀘티아오, 사테, 오이스터 오믈렛</div>
+            <div class="restaurant-tip">⭐ 페낭 필수! 저녁 추천</div>
+          </div>
+        </div>
+        
+        <div class="restaurant">
+          <span class="restaurant-icon">🦐</span>
+          <div class="restaurant-info">
+            <div class="restaurant-name">거니드라이브 호커</div>
+            <div class="restaurant-menu">락사, 파셈버, 로작</div>
+            <div class="restaurant-tip">🌅 바다뷰 + 선셋 디너</div>
+          </div>
+        </div>
+        
+        <div class="restaurant">
+          <span class="restaurant-icon">🍲</span>
+          <div class="restaurant-info">
+            <div class="restaurant-name">에어이탐 아쌈 락사</div>
+            <div class="restaurant-menu">아쌈 락사 (새콤한 국수)</div>
+            <div class="restaurant-tip">🛕 극락사 방문 후 점심!</div>
+          </div>
+        </div>
+        
+        <div class="restaurant">
+          <span class="restaurant-icon">🥡</span>
+          <div class="restaurant-info">
+            <div class="restaurant-name">킴벌리 스트릿</div>
+            <div class="restaurant-menu">덕 꿰이티아오, 치청펀</div>
+            <div class="restaurant-tip">🌙 야시장 분위기</div>
+          </div>
+        </div>
+        
+        <h3 style="margin: 20px 0 12px; color: #1E293B;">👨‍👧‍👦 아이들 친화 식당</h3>
+        
+        <div class="restaurant">
+          <span class="restaurant-icon">🍗</span>
+          <div class="restaurant-info">
+            <div class="restaurant-name">Tek Sen</div>
+            <div class="restaurant-menu">중식 가정식, 볶음밥</div>
+            <div class="restaurant-tip">현지인 맛집, 심플한 맛</div>
+          </div>
+        </div>
+        
+        <div class="restaurant">
+          <span class="restaurant-icon">🍕</span>
+          <div class="restaurant-info">
+            <div class="restaurant-name">거니플라자 푸드코트</div>
+            <div class="restaurant-menu">각자 원하는 메뉴 선택</div>
+            <div class="restaurant-tip">👶 에어컨 + 다양한 선택</div>
+          </div>
+        </div>
+        
+        <div class="restaurant">
+          <span class="restaurant-icon">🍰</span>
+          <div class="restaurant-info">
+            <div class="restaurant-name">Secret Recipe</div>
+            <div class="restaurant-menu">케이크, 파스타, 웨스턴</div>
+            <div class="restaurant-tip">🎂 아이들 디저트 타임!</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">💡</span>
+          <div>
+            <div class="card-title">솔로육아 식사 팁</div>
+          </div>
+        </div>
+        <ul class="checklist">
+          <li><span class="check-icon">✅</span> 호텔 조식 적극 활용 (OZO 조식 포함)</li>
+          <li><span class="check-icon">✅</span> 푸드코트 = 안전한 선택 (에어컨, 다양한 메뉴)</li>
+          <li><span class="check-icon">✅</span> Grab 배달 가능 (피곤한 날 숙소 식사)</li>
+          <li><span class="check-icon">✅</span> 간식 항상 준비 (호커 대기 시간 대비)</li>
+          <li><span class="check-icon">✅</span> 물 충분히! (더운 날씨)</li>
+        </ul>
       </div>
     </section>
     
@@ -305,7 +615,7 @@
           <span class="card-icon">✈️</span>
           <div>
             <div class="card-title">항공편 정보</div>
-            <div class="card-subtitle">말레이시아항공</div>
+            <div class="card-subtitle">말레이시아항공 + Firefly</div>
           </div>
         </div>
         
@@ -324,11 +634,11 @@
             <div class="flight-line"></div>
             <div class="flight-city">
               <div class="flight-time">16:45</div>
-              <div class="flight-name">쿠알라룸푸르</div>
+              <div class="flight-name">KL</div>
             </div>
           </div>
         </div>
-        <p style="text-align: center; font-size: 0.85rem; color: #6366F1; margin-bottom: 12px;">말레이시아항공 직항 | 6시간 40분</p>
+        <p style="text-align: center; font-size: 0.85rem; color: #6366F1; margin-bottom: 12px;">MH67 | 6시간 40분</p>
         
         <div class="flight" style="border-left: 4px solid #10B981;">
           <div class="flight-date">
@@ -349,33 +659,54 @@
             </div>
           </div>
         </div>
-        <p style="text-align: center; font-size: 0.85rem; color: #10B981; margin-bottom: 12px;">1시간 5분 ⭐ 오전에 바투동굴 가능!</p>
+        <p style="text-align: center; font-size: 0.85rem; color: #10B981; margin-bottom: 12px;">MH1446 | 1시간 5분</p>
         
         <div class="flight" style="border-left: 4px solid #F59E0B;">
           <div class="flight-date">
-            <div class="day">2월 21일</div>
-            <div class="type" style="color: #F59E0B;">페리</div>
+            <div class="day">2월 20일</div>
+            <div class="type" style="color: #F59E0B;">국내선</div>
           </div>
           <div class="flight-route">
             <div class="flight-city">
-              <div class="flight-time">14:00</div>
+              <div class="flight-time">AM</div>
               <div class="flight-name">랑카위</div>
             </div>
             <div class="flight-line"></div>
-            <span class="flight-icon">🚢</span>
+            <span class="flight-icon">✈️</span>
             <div class="flight-line"></div>
             <div class="flight-city">
-              <div class="flight-time">17:00</div>
+              <div class="flight-time">AM</div>
               <div class="flight-name">페낭</div>
             </div>
           </div>
         </div>
-        <p style="text-align: center; font-size: 0.85rem; color: #F59E0B; margin-bottom: 12px;">약 3시간 (바다 풍경 감상 🌊)</p>
+        <p style="text-align: center; font-size: 0.85rem; color: #F59E0B; margin-bottom: 12px;">Firefly | ~35분 (예약 필요)</p>
         
-        <div class="flight" style="border-left: 4px solid #EC4899;">
+        <div class="flight" style="border-left: 4px solid #DC2626; background: #FEF2F2;">
+          <div class="flight-date">
+            <div class="day">2월 21일</div>
+            <div class="type" style="color: #DC2626;">아내 귀국</div>
+          </div>
+          <div class="flight-route">
+            <div class="flight-city">
+              <div class="flight-time">21:10</div>
+              <div class="flight-name">페낭</div>
+            </div>
+            <div class="flight-line"></div>
+            <span class="flight-icon">✈️</span>
+            <div class="flight-line"></div>
+            <div class="flight-city">
+              <div class="flight-time">07:15+1</div>
+              <div class="flight-name">인천</div>
+            </div>
+          </div>
+        </div>
+        <p style="text-align: center; font-size: 0.85rem; color: #DC2626; margin-bottom: 12px;">MH1155 + MH5620 | KL 환승</p>
+        
+        <div class="flight" style="border-left: 4px solid #6366F1;">
           <div class="flight-date">
             <div class="day">2월 26일</div>
-            <div class="type" style="color: #EC4899;">귀국</div>
+            <div class="type" style="color: #6366F1;">귀국</div>
           </div>
           <div class="flight-route">
             <div class="flight-city">
@@ -383,7 +714,7 @@
               <div class="flight-name">페낭</div>
             </div>
             <div class="flight-line"></div>
-            <span style="font-size: 0.75rem; color: #64748B;">KUL 경유</span>
+            <span style="font-size: 0.7rem; color: #64748B;">KL</span>
             <div class="flight-line"></div>
             <div class="flight-city">
               <div class="flight-time">20:55</div>
@@ -391,7 +722,7 @@
             </div>
           </div>
         </div>
-        <p style="text-align: center; font-size: 0.85rem; color: #EC4899;">KUL 경유 1시간 20분 | 총 8시간 55분</p>
+        <p style="text-align: center; font-size: 0.85rem; color: #6366F1;">MH1143 + MH38 | KL 환승 1시간 20분</p>
       </div>
     </section>
     
@@ -409,28 +740,55 @@
         <div class="budget-item">
           <span class="budget-icon">✈️</span>
           <div class="budget-info">
-            <div class="budget-name">항공권</div>
-            <div class="budget-desc">인천↔KL 왕복 + 국내선</div>
+            <div class="budget-name">국제선 항공권</div>
+            <div class="budget-desc">인천↔KL 왕복 (4인)</div>
           </div>
-          <div class="budget-amount" style="color: #0891B2;">237만원</div>
+          <div class="budget-amount" style="color: #0891B2;">~320만원</div>
+        </div>
+        
+        <div class="budget-item">
+          <span class="budget-icon">🛫</span>
+          <div class="budget-info">
+            <div class="budget-name">국내선 항공</div>
+            <div class="budget-desc">KL→LGK + LGK→PEN + 아내 귀국편</div>
+          </div>
+          <div class="budget-amount" style="color: #0891B2;">~35만원</div>
         </div>
         
         <div class="budget-item">
           <span class="budget-icon">🏨</span>
           <div class="budget-info">
-            <div class="budget-name">숙소 (15박)</div>
-            <div class="budget-desc">KL 80 + 랑카위 90 + 페낭 55</div>
+            <div class="budget-name">KL 숙소 (5박)</div>
+            <div class="budget-desc">Ascott KL</div>
           </div>
-          <div class="budget-amount" style="color: #10B981;">225만원</div>
+          <div class="budget-amount" style="color: #10B981;">~174만원</div>
+        </div>
+        
+        <div class="budget-item">
+          <span class="budget-icon">🏝️</span>
+          <div class="budget-info">
+            <div class="budget-name">랑카위 숙소 (4박)</div>
+            <div class="budget-desc">비치 리조트</div>
+          </div>
+          <div class="budget-amount" style="color: #10B981;">~80만원</div>
+        </div>
+        
+        <div class="budget-item">
+          <span class="budget-icon">🎨</span>
+          <div class="budget-info">
+            <div class="budget-name">페낭 숙소 (6박)</div>
+            <div class="budget-desc">Airbnb 2박 + OZO 4박</div>
+          </div>
+          <div class="budget-amount" style="color: #10B981;">~42만원</div>
         </div>
         
         <div class="budget-item">
           <span class="budget-icon">🎫</span>
           <div class="budget-info">
             <div class="budget-name">입장료/투어</div>
-            <div class="budget-desc">아쿠아리아, 선웨이라군, 스카이캡 등</div>
+            <div class="budget-desc">선웨이라군, 페낭힐, 스카이캡 등</div>
           </div>
-          <div class="budget-amount" style="color: #F59E0B;">120만원</div>
+          <div class="budget-amount" style="color: #F59E0B;">~50만원</div>
         </div>
         
         <div class="budget-item">
@@ -439,7 +797,7 @@
             <div class="budget-name">식비 (16일)</div>
             <div class="budget-desc">하루 약 5만원 × 16일</div>
           </div>
-          <div class="budget-amount" style="color: #EC4899;">80만원</div>
+          <div class="budget-amount" style="color: #EC4899;">~80만원</div>
         </div>
         
         <div class="budget-item">
@@ -448,20 +806,20 @@
             <div class="budget-name">교통 + 기타</div>
             <div class="budget-desc">Grab, 유심, 기념품, 예비비</div>
           </div>
-          <div class="budget-amount" style="color: #8B5CF6;">80만원</div>
+          <div class="budget-amount" style="color: #8B5CF6;">~50만원</div>
         </div>
         
         <div class="total-box">
           <div class="total-label">총 예상 비용</div>
-          <div class="total-amount">742만원</div>
-          <div class="total-sub">1인당 약 185만원</div>
+          <div class="total-amount">~831만원</div>
+          <div class="total-sub">1인당 약 208만원</div>
         </div>
       </div>
     </section>
     
     <footer class="footer">
       <p>🌴 즐거운 추억 만들러 가요! 💕</p>
-      <p style="margin-top: 8px; font-size: 0.8rem;">우리 가족 말레이시아 여행 2025</p>
+      <p style="margin-top: 8px; font-size: 0.8rem;">말레이시아 가족 여행 2026 | 솔로육아 파이팅! 👨‍👧‍👦</p>
     </footer>
   </div>
   
