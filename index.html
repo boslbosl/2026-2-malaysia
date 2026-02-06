@@ -1,202 +1,282 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>말레이시아 가족 여행 계획표 (2026)</title>
-    <style>
-        :root {
-            --primary: #006A4E; /* Malaysia Green */
-            --secondary: #FFCC00; /* Malaysia Yellow */
-            --bg: #f4f7f6;
-            --card-bg: #ffffff;
-            --text: #333333;
-        }
-        body {
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--bg);
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: var(--primary);
-            color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        h1 { margin: 0; font-size: 1.8rem; }
-        .subtitle { font-size: 0.9rem; opacity: 0.9; margin-top: 5px; }
-        
-        .card {
-            background: var(--card-bg);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .card h2 {
-            border-bottom: 2px solid var(--secondary);
-            padding-bottom: 10px;
-            color: var(--primary);
-            margin-top: 0;
-        }
-        .date-badge {
-            display: inline-block;
-            background: var(--secondary);
-            color: #000;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            margin-right: 8px;
-        }
-        .location { font-weight: bold; color: #555; }
-        .flight-info {
-            background: #eef2f5;
-            padding: 10px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            margin-top: 5px;
-            border-left: 4px solid var(--primary);
-        }
-        .highlight-red { color: #d9534f; font-weight: bold; }
-        .food-tip { color: #d35400; font-weight: bold; }
-        ul { padding-left: 20px; margin: 10px 0; }
-        li { margin-bottom: 5px; }
-        
-        .btn-link {
-            display: inline-block;
-            margin-top: 10px;
-            text-decoration: none;
-            color: white;
-            background-color: #3498db;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-        }
-        
-        @media (max-width: 600px) {
-            body { padding: 10px; }
-            h1 { font-size: 1.5rem; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🇲🇾 말레이시아 가족여행 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--kl:#E63946;--lgk:#2A9D8F;--pen:#D4A017;--bg:#FEFAE0;--dark:#1D3557;--light:#F1FAEE;--text:#264653;--shadow:0 4px 24px rgba(29,53,87,.12);--r:16px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+.hero{background:linear-gradient(135deg,var(--dark) 0%,#457B9D 50%,var(--lgk) 100%);color:#fff;padding:80px 24px 60px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 70%,rgba(233,196,106,.15) 0%,transparent 50%),radial-gradient(circle at 70% 30%,rgba(230,57,70,.1) 0%,transparent 50%);animation:fl 20s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translate(0,0)}33%{transform:translate(30px,-20px)}66%{transform:translate(-20px,10px)}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;position:relative;margin-bottom:12px;text-shadow:0 2px 20px rgba(0,0,0,.2)}
+.hero .sub{font-size:1.1rem;font-weight:300;opacity:.9;position:relative;margin-bottom:24px}
+.pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;position:relative}
+.pill{background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);padding:8px 18px;border-radius:50px;font-size:.85rem}
+.nav{position:sticky;top:0;z-index:100;background:rgba(254,250,224,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(29,53,87,.08);padding:0 16px;display:flex;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nb{flex-shrink:0;padding:14px 20px;border:none;background:none;font-family:'Noto Sans KR',sans-serif;font-size:.85rem;font-weight:500;color:var(--text);cursor:pointer;border-bottom:3px solid transparent;transition:.3s;white-space:nowrap}
+.nb:hover{opacity:.7}.nb.on{border-bottom-color:var(--kl);color:var(--kl);font-weight:700}
+.c{max-width:900px;margin:0 auto;padding:24px 16px}
+.ch{padding:40px 24px;border-radius:var(--r);margin:32px 0 20px;color:#fff;overflow:hidden}
+.ch.kl{background:linear-gradient(135deg,var(--kl),#c1121f)}
+.ch.lgk{background:linear-gradient(135deg,var(--lgk),#1a7a6e)}
+.ch.pen{background:linear-gradient(135deg,var(--pen),#B8860B)}
+.ch h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;margin-bottom:8px}
+.ch p{font-weight:300;opacity:.9}
+.dc{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);margin-bottom:20px;overflow:hidden;transition:transform .2s}
+.dc:hover{transform:translateY(-2px)}
+.dh{padding:18px 24px;cursor:pointer;display:flex;align-items:center;gap:16px;user-select:none}
+.dn{width:52px;height:52px;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-weight:700;flex-shrink:0}
+.dn .n{font-size:1.2rem;line-height:1}.dn .l{font-size:.6rem;font-weight:400;opacity:.8}
+.di{flex:1}.dt{font-weight:700;font-size:1.05rem}.dd{font-size:.8rem;color:#888;margin-top:2px}
+.tg{font-size:1.2rem;transition:transform .3s;color:#aaa}
+.dc.op .tg{transform:rotate(180deg)}
+.dx{display:none;padding:0 24px 24px}.dc.op .dx{display:block}
+.sc{width:100%;border-collapse:collapse;margin:12px 0}
+.sc td{padding:10px 12px;border-bottom:1px solid #f0f0f0;vertical-align:top;font-size:.9rem}
+.sc td:first-child{width:60px;font-weight:700;color:var(--dark);white-space:nowrap;font-size:.82rem}
+.sc tr:last-child td{border-bottom:none}
+.ss{margin-top:18px;padding:16px;border-radius:12px;background:var(--light)}
+.ss h4{font-size:.85rem;font-weight:700;margin-bottom:10px}
+.cl{list-style:none}.cl li{padding:6px 0;font-size:.88rem;display:flex;align-items:flex-start;gap:8px}
+.cl input[type=checkbox]{margin-top:4px;accent-color:var(--lgk);width:16px;height:16px;flex-shrink:0}
+.cl label{cursor:pointer}.cl input:checked+label{text-decoration:line-through;color:#aaa}
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:8px}
+.rc{background:#fff;border-radius:10px;padding:12px;border:1px solid #e8e8e8}
+.rc .rn{font-weight:700;font-size:.88rem}.rc .rd{font-size:.78rem;color:#666;margin-top:4px}
+.ft{width:100%;border-collapse:collapse;margin:16px 0;font-size:.85rem}
+.ft th{background:var(--dark);color:#fff;padding:10px 12px;text-align:left;font-weight:500}
+.ft td{padding:10px 12px;border-bottom:1px solid #eee}
+.ft tr:nth-child(even){background:#f8f8f8}
+.bg{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.72rem;font-weight:600}
+.ba{background:#dbeafe;color:#1e40af}.bm{background:#fce7f3;color:#be185d}.bd{background:#d1fae5;color:#065f46}
+.ac{display:grid;gap:12px;margin:16px 0}
+.ai{background:#fff;border-radius:12px;padding:18px;border-left:4px solid var(--lgk);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.ai.kl{border-left-color:var(--kl)}.ai.lgk{border-left-color:var(--lgk)}.ai.pen{border-left-color:var(--pen)}
+.ai .ac1{font-size:.72rem;text-transform:uppercase;letter-spacing:1px;font-weight:700}
+.ai .ac2{font-weight:700;font-size:1rem;margin:4px 0}
+.ai .ac3{font-size:.82rem;color:#666}
+.fdt{width:100%;border-collapse:collapse;margin:12px 0;font-size:.85rem}
+.fdt th{text-align:left;padding:8px;border-bottom:2px solid var(--dark);font-weight:700}
+.fdt td{padding:8px;border-bottom:1px solid #eee}.stars{color:#f59e0b}
+.sb{background:linear-gradient(135deg,#fef3c7,#fde68a);border:2px solid #f59e0b;border-radius:var(--r);padding:24px;margin:24px 0}
+.sb h3{color:#92400e;margin-bottom:12px}
+.tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px}
+.tip{display:flex;gap:10px;align-items:flex-start;font-size:.88rem}
+.tn{background:#f59e0b;color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0}
+.em{background:var(--kl);color:#fff;border-radius:var(--r);padding:24px;margin:24px 0}
+.em h3{margin-bottom:12px}
+.eg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.ei{font-size:.88rem}.ei strong{display:block;font-size:.78rem;opacity:.8}
+.al{background:linear-gradient(135deg,#fce7f3,#fbcfe8);border:2px solid #f472b6;border-radius:12px;padding:14px 18px;margin:12px 0;font-size:.88rem;font-weight:500;color:#9d174d}
+.alb{background:#dbeafe;border-color:#3b82f6;color:#1e40af}
+.footer{text-align:center;padding:40px 24px;color:#999;font-size:.8rem}
+@media(max-width:600px){.hero{padding:60px 16px 40px}.hero h1{font-size:1.8rem}.dh{padding:14px 16px;gap:12px}.dx{padding:0 16px 16px}.rg{grid-template-columns:1fr}.ch{padding:28px 18px}.ch h2{font-size:1.5rem}}
+@media print{.nav{display:none}.dx{display:block!important}.dc{break-inside:avoid}}
+</style>
 </head>
 <body>
-
-<div class="container">
-    <header>
-        <h1>🇲🇾 말레이시아 가족 여행</h1>
-        <div class="subtitle">2026.02.11 - 02.26 (쿠알라룸푸르 · 랑카위 · 페낭)</div>
-    </header>
-
-    <div class="card">
-        <h2>✈️ 항공편 요약</h2>
-        <div class="flight-info">
-            <strong>🛫 출국 (전원)</strong><br>
-            2/11 11:05 ICN → 16:45 KUL (MH67)
-        </div>
-        <div class="flight-info" style="border-left-color: #e74c3c;">
-            <strong>🛫 귀국 (엄마)</strong><br>
-            2/21 21:10 PEN → 22:20 KUL (MH1155)<br>
-            2/21 KUL → 2/22 ICN (MH5620/MH66)
-        </div>
-        <div class="flight-info">
-            <strong>🛫 귀국 (나머지)</strong><br>
-            2/26 11:00 PEN → 12:05 KUL (MH1143)<br>
-            2/26 13:25 KUL → 20:55 ICN (MH38)
-        </div>
-    </div>
-
-    <div class="card">
-        <h2>🏙️ 여정 1: 쿠알라룸푸르 (5박)</h2>
-        <p><strong>숙소:</strong> Lucentia (Bukit Bintang City Centre)</p>
-        
-        <div><span class="date-badge">2.11(수)</span> <strong>도착 및 야시장</strong></div>
-        <ul>
-            <li>16:45 공항 도착 후 숙소 이동 (Grab XL 추천)</li>
-            <li>저녁: <span class="food-tip">잘란 알로 야시장 (윙, 사테)</span></li>
-        </ul>
-
-        <div><span class="date-badge">2.12(목)</span> <strong>부킷빈탕 시내</strong></div>
-        <ul>
-            <li>파빌리온 몰 쇼핑 & 환전</li>
-            <li>점심: <span class="food-tip">마담 콴스 (Madam Kwan's)</span></li>
-            <li>저녁: 라라포트 구경 및 숙소 수영장</li>
-        </ul>
-
-        <div><span class="date-badge">2.13(금)</span> <strong>바투 동굴</strong></div>
-        <ul>
-            <li>오전: 바투 동굴 투어 (계단 오르기)</li>
-            <li>오후: KLCC 공원 & 페트로나스 트윈타워 야경</li>
-        </ul>
-
-        <div><span class="date-badge">2.14(토) ~ 15(일)</span> <strong>문화와 휴식</strong></div>
-        <ul>
-            <li>메르데카 광장, 차이나타운, 센트럴 마켓</li>
-            <li>맛집: <span class="food-tip">VCR 카페, Hakka Restaurant(칠리크랩)</span></li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>🦅 여정 2: 랑카위 (4박)</h2>
-        <p><strong>이동:</strong> 2.16(월) 16:40 KUL → 17:45 LGK (MH1446)</p>
-        
-        <div><span class="date-badge">2.16(월) ~ 17(화)</span> <strong>쿠아 타운 (Dayang Bay)</strong></div>
-        <ul>
-            <li>독수리 광장 (Dataran Lang) 인증샷</li>
-            <li>킬림 생태 공원 맹그로브 투어 (보트)</li>
-            <li>저녁: <span class="food-tip">원더랜드 푸드 스토어 (해산물)</span></li>
-        </ul>
-
-        <div><span class="date-badge">2.18(수) ~ 20(금)</span> <strong>체낭 비치 (Lavanya BNB)</strong></div>
-        <ul>
-            <li><span class="highlight-red">필수:</span> 오리엔탈 빌리지 스카이캡 & 스카이브리지</li>
-            <li>판타이 체낭 해변 석양 감상</li>
-            <li>저녁: <span class="food-tip">Orkid Ria, Yellow Beach Cafe</span></li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>🎨 여정 3: 페낭 (6박)</h2>
-        <p><strong>이동:</strong> 2.20(금) 18:35 LGK → 19:15 PEN (FY2703)</p>
-        
-        <div><span class="date-badge">2.20(금) ~ 22(일)</span> <strong>조지타운 (22 Macalisterz)</strong></div>
-        <ul>
-            <li>조지타운 벽화 거리, 페라나칸 맨션</li>
-            <li>맛집: <span class="food-tip">Tek Sen(중국가정식), New Lane 야시장</span></li>
-            <li><strong>2.21(토):</strong> <span class="highlight-red">엄마 공항 배웅 (19:30까지 공항 도착 권장)</span></li>
-            <li>2.22(일): 켁록시 사원 & 페낭 힐 푸니쿨라</li>
-        </ul>
-
-        <div><span class="date-badge">2.23(월) ~ 26(목)</span> <strong>탄중토콩 (해변 근처)</strong></div>
-        <ul>
-            <li>숙소 이동 후 스트레이츠 키 산책</li>
-            <li>바투 페링기 해변 스타벅스 & 휴양</li>
-            <li>맛집: <span class="food-tip">거니 드라이브 호커 센터, 딤섬</span></li>
-            <li>2.26(목): 오전 8:30 공항으로 출발 (귀국)</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>📝 체크리스트 & 팁</h2>
-        <ul>
-            <li>🔌 <strong>전압:</strong> 말레이시아는 G타입(3구) 사용. 멀티어댑터 필수.</li>
-            <li>🚿 <strong>필터:</strong> 수질에 민감하다면 샤워기 필터 챙기기.</li>
-            <li>🚕 <strong>이동:</strong> 4인 가족이므로 <strong>Grab 6 Seater</strong> 호출 추천.</li>
-            <li>💰 <strong>환전:</strong> 트래블월렛/로그 등 카드 사용 용이. 현금은 야시장용으로 일부 필요.</li>
-            <li>⚠️ <strong>귀국 환승:</strong> 2/26 귀국 시 페낭→KL 환승 시간이 1시간 20분으로 짧습니다. 짐이 바로 연결되는지(Through check-in) 페낭 공항 카운터에서 반드시 확인하세요.</li>
-        </ul>
-    </div>
+<div class="hero">
+<h1>🇲🇾 Malaysia Family Trip</h1>
+<p class="sub">쿠알라룸푸르 → 랑카위 → 페낭 | 16일간의 가족 대모험</p>
+<div class="pills">
+<span class="pill">📅 2026.02.11 ~ 02.26</span>
+<span class="pill">👨‍👩‍👧‍👦 아빠·엄마·첫째(10)·둘째(5)</span>
+<span class="pill">🏨 5개 숙소 · 15박</span>
+<span class="pill">✈️ 6구간 항공</span>
+</div>
 </div>
 
+<div class="nav" id="navbar">
+<button class="nb on" onclick="go('flights')">✈️ 항공편</button>
+<button class="nb" onclick="go('accom')">🏨 숙소</button>
+<button class="nb" onclick="go('kl')">🏙️ KL</button>
+<button class="nb" onclick="go('lgk')">🏝️ 랑카위</button>
+<button class="nb" onclick="go('pen')">🎨 페낭</button>
+<button class="nb" onclick="go('food')">🍜 음식</button>
+<button class="nb" onclick="go('emer')">📞 비상</button>
+</div>
+
+<div class="c">
+<div id="flights">
+<h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;margin:32px 0 16px">✈️ 항공편 총정리</h2>
+<table class="ft"><thead><tr><th>구간</th><th>날짜</th><th>편명</th><th>시간</th><th>탑승</th></tr></thead><tbody>
+<tr><td>서울→KL</td><td>2/11(수)</td><td>MH67</td><td>11:05→16:45</td><td><span class="bg ba">전원</span></td></tr>
+<tr><td>KL→랑카위</td><td>2/16(월)</td><td>MH1446</td><td>16:40→17:45</td><td><span class="bg ba">전원</span></td></tr>
+<tr><td>랑카위→페낭</td><td>2/20(금)</td><td>FY2703</td><td>18:35→19:15</td><td><span class="bg ba">전원</span></td></tr>
+<tr><td>페낭→KL</td><td>2/21(토)</td><td>MH1155</td><td>21:10→22:20</td><td><span class="bg bm">엄마만</span></td></tr>
+<tr><td>KL→서울</td><td>2/21~22</td><td>MH5620</td><td>심야편</td><td><span class="bg bm">엄마만</span></td></tr>
+<tr><td>페낭→KL</td><td>2/26(목)</td><td>MH1143</td><td>11:00→12:05</td><td><span class="bg bd">아빠+아이들</span></td></tr>
+<tr><td>KL→서울</td><td>2/26(목)</td><td>MH38</td><td>13:25→20:55</td><td><span class="bg bd">아빠+아이들</span></td></tr>
+</tbody></table>
+</div>
+
+<div id="accom">
+<h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;margin:32px 0 16px">🏨 숙소 총정리</h2>
+<div class="ac">
+<div class="ai kl"><div class="ac1" style="color:var(--kl)">쿠알라룸푸르</div><div class="ac2">Lucentia 2BR | Infinity Pool</div><div class="ac3">📅 2/11~16 (5박) · 💰 ₩637,442 · 🏊 인피니티풀 · 🍳 주방</div></div>
+<div class="ai lgk"><div class="ac1" style="color:var(--lgk)">랑카위 ①</div><div class="ac2">Dayang Bay Resort</div><div class="ac3">📅 2/16~18 (2박) · 🏊 리조트 풀 · 🌊 베이 뷰</div></div>
+<div class="ai lgk"><div class="ac1" style="color:var(--lgk)">랑카위 ②</div><div class="ac2">Lavanya BNB (JD Luxury)</div><div class="ac3">📅 2/18~20 (2박) · 💰 ₩660,361 · 🏊 풀</div></div>
+<div class="ai pen"><div class="ac1" style="color:#B8860B">페낭 ① (가족)</div><div class="ac2">22 Macalisterz · 조지타운</div><div class="ac3">📅 2/20~23 (3박) · 📍 22 Jalan Macalister, Georgetown</div></div>
+<div class="ai pen"><div class="ac1" style="color:#B8860B">페낭 ② (아빠+아이들)</div><div class="ac2">Tanjung Tokong 아파트</div><div class="ac3">📅 2/23~26 (3박) · 📍 Lorong Seri Tanjung Pinang · 🏊 풀</div></div>
+</div>
+</div>
+
+<!-- KL -->
+<div id="kl">
+<div class="ch kl"><h2>🏙️ 여정 1: 쿠알라룸푸르</h2><p>2월 11일(수) ~ 16일(월) · 5박 · Lucentia 2BR</p></div>
+
+<div class="dc"><div class="dh" onclick="tog(this)"><div class="dn" style="background:var(--kl)"><span class="n">1</span><span class="l">DAY</span></div><div class="di"><div class="dt">✈️ 도착 & 체크인</div><div class="dd">2월 11일 (수)</div></div><span class="tg">▼</span></div>
+<div class="dx"><table class="sc"><tr><td>11:05</td><td>인천공항 출발 (MH67)</td></tr><tr><td>16:45</td><td>KL 도착, 입국심사</td></tr><tr><td>17:30</td><td>공항에서 SIM카드 구매</td></tr><tr><td>18:00</td><td>Grab 택시로 숙소 이동 (~45분)</td></tr><tr><td>19:00</td><td>Lucentia 체크인, 인피니티풀 확인</td></tr><tr><td>19:30</td><td>숙소 근처 저녁식사</td></tr><tr><td>21:00</td><td>마트에서 물/간식 구매, 휴식</td></tr></table>
+<div class="ss"><h4>✅ 체크리스트</h4><ul class="cl"><li><input type="checkbox" id="c1"><label for="c1">공항에서 SIM카드 구매</label></li><li><input type="checkbox" id="c2"><label for="c2">Grab 앱으로 숙소 이동</label></li><li><input type="checkbox" id="c3"><label for="c3">인피니티풀 위치 & 운영시간 확인</label></li><li><input type="checkbox" id="c4"><label for="c4">근처 편의점/마트 위치 파악</label></li><li><input type="checkbox" id="c5"><label for="c5">MDAC (디지털 입국카드) 확인</label></li></ul></div>
+<div class="ss"><h4>🍽️ 식당 추천</h4><div class="rg"><div class="rc"><div class="rn">🍜 Jalan Alor 야시장</div><div class="rd">다양한 로컬 음식, 사테이 필수</div></div><div class="rc"><div class="rn">🍛 Village Park</div><div class="rd">유명 나시르막 맛집</div></div><div class="rc"><div class="rn">🛒 숙소 근처 마트</div><div class="rd">첫날은 간단히</div></div></div></div></div></div>
+
+<div class="dc"><div class="dh" onclick="tog(this)"><div class="dn" style="background:var(--kl)"><span class="n">2</span><span class="l">DAY</span></div><div class="di"><div class="dt">🏗️ KLCC 탐험 — 트윈타워 & 과학관</div><div class="dd">2월 12일 (목)</div></div><span class="tg">▼</span></div>
+<div class="dx"><table class="sc"><tr><td>10:00</td><td><strong>페트로나스 트윈타워</strong> 전망대 (사전예약!)</td></tr><tr><td>12:00</td><td>Suria KLCC 몰 점심</td></tr><tr><td>13:30</td><td><strong>Petrosains Discovery Centre</strong></td></tr><tr><td>16:00</td><td><strong>KLCC 공원</strong> 놀이터 & 무료 물놀이장 💦</td></tr><tr><td>17:30</td><td>Lake Symphony 분수쇼</td></tr><tr><td>20:00</td><td>숙소 인피니티풀</td></tr></table>
+<div class="ss"><h4>✅ 체크리스트</h4><ul class="cl"><li><input type="checkbox" id="c6"><label for="c6">트윈타워 티켓 사전 예약 (성인 RM98, 아동 RM50)</label></li><li><input type="checkbox" id="c7"><label for="c7">KLCC 공원 물놀이장 — 여벌옷 준비</label></li><li><input type="checkbox" id="c8"><label for="c8">Petrosains 입장료 확인</label></li></ul></div>
+<div class="ss"><h4>🍽️ 식당 추천</h4><div class="rg"><div class="rc"><div class="rn">🍜 Madam Kwan's</div><div class="rd">KLCC 내, 나시르막·락사</div></div><div class="rc"><div class="rn">🍗 Nando's</div><div class="rd">KLCC 내, 아이들 치킨</div></div><div class="rc"><div class="rn">🍲 Lot 10 Hutong</div><div class="rd">부킷빈탕, 호커센터 스타일</div></div></div></div></div></div>
+
+<div class="dc"><div class="dh" onclick="tog(this)"><div class="dn" style="background:var(--kl)"><span class="n">3</span><span class="l">DAY</span></div><div class="di"><div class="dt">🕌 바투동굴 & KidZania 직업체험</div><div class="dd">2월 13일 (금)</div></div><span class="tg">▼</span></div>
+<div class="dx"><table class="sc"><tr><td>09:00</td><td>Grab으로 <strong>바투 동굴</strong> 이동</td></tr><tr><td>09:30</td><td>바투 동굴 탐방 (272계단! 🏋️)</td></tr><tr><td>11:30</td><td>리틀 인디아 간식</td></tr><tr><td>14:00</td><td><strong>KidZania KL</strong> 직업체험 (3~4시간)</td></tr><tr><td>18:00</td><td>저녁식사</td></tr></table>
+<div class="ss"><h4>✅ 체크리스트</h4><ul class="cl"><li><input type="checkbox" id="c9"><label for="c9">바투 동굴 — 무릎 위 반바지, 어깨 덮는 옷</label></li><li><input type="checkbox" id="c10"><label for="c10">272계단 — 둘째 간식/물 충분히</label></li><li><input type="checkbox" id="c11"><label for="c11">⚠️ 원숭이 주의! 가방 꽉 잡기</label></li><li><input type="checkbox" id="c12"><label for="c12">KidZania 온라인 티켓 사전 구매</label></li></ul></div>
+<div class="ss"><h4>🍽️ 식당 추천</h4><div class="rg"><div class="rc"><div class="rn">🥘 Restoran Samy</div><div class="rd">바투동굴 근처, 바나나잎 밥</div></div><div class="rc"><div class="rn">🍜 Brickfields 리틀인디아</div><div class="rd">로띠차나이, 탄두리 치킨</div></div></div></div></div></div>
+
+<div class="dc"><div class="dh" onclick="tog(this)"><div class="dn" style="background:var(--kl)"><span class="n">4</span><span class="l">DAY</span></div><div class="di"><div class="dt">🏛️ 구시가지 문화탐방 ❤️ 발렌타인데이</div><div class="dd">2월 14일 (토)</div></div><span class="tg">▼</span></div>
+<div class="dx"><table class="sc"><tr><td>10:00</td><td><strong>메르데카 광장</strong> & 술탄압둘사마드 빌딩</td></tr><tr><td>10:30</td><td><strong>KL City Gallery</strong> (I ❤ KL 포토스팟)</td></tr><tr><td>11:00</td><td><strong>차이나타운 Petaling St.</strong> 산책·쇼핑</td></tr><tr><td>14:00</td><td><strong>KL 버드파크</strong> 또는 버터플라이 파크</td></tr><tr><td>16:00</td><td><strong>KL Forest Eco Park</strong> 캐노피 워크</td></tr><tr><td>19:30</td><td><strong>살로마 브릿지</strong> 야경 🌃</td></tr></table>
+<div class="ss"><h4>🍽️ 식당 추천</h4><div class="rg"><div class="rc"><div class="rn">🥟 Bun Choon</div><div class="rd">차이나타운, 에그타르트·딤섬</div></div><div class="rc"><div class="rn">🍜 Kim Lian Kee</div><div class="rd">호끈미(Hokkien Mee) 원조</div></div><div class="rc"><div class="rn">🍲 Jalan Alor 야시장</div><div class="rd">사테이, 과일주스</div></div></div></div></div></div>
+
+<div class="dc"><div class="dh" onclick="tog(this)"><div class="dn" style="background:var(--kl)"><span class="n">5</span><span class="l">DAY</span></div><div class="di"><div class="dt">🎢 실내테마파크 & 쇼핑</div><div class="dd">2월 15일 (일)</div></div><span class="tg">▼</span></div>
+<div class="dx"><table class="sc"><tr><td>09:00</td><td>느긋한 아침, 인피니티풀</td></tr><tr><td>10:30</td><td><strong>Berjaya Times Square Theme Park</strong></td></tr><tr><td>14:30</td><td><strong>Pavilion KL</strong> or <strong>Mid Valley</strong> 쇼핑</td></tr><tr><td>20:00</td><td>짐 정리 (내일 랑카위!)</td></tr></table>
+<div class="ss"><h4>✅ 체크리스트</h4><ul class="cl"><li><input type="checkbox" id="c13"><label for="c13">내일 체크아웃 — 짐 정리</label></li><li><input type="checkbox" id="c14"><label for="c14">랑카위 항공편 확인 (MH1446 16:40)</label></li></ul></div></div></div>
+
+<div class="dc"><div class="dh" onclick="tog(this)"><div class="dn" style="background:var(--kl)"><span class="n">6</span><span class="l">DAY</span></div><div class="di"><div class="dt">✈️ KL → 랑카위 이동</div><div class="dd">2월 16일 (월)</div></div><span class="tg">▼</span></div>
+<div class="dx"><table class="sc"><tr><td>10:00</td><td>체크아웃</td></tr><tr><td>10:30</td><td>브런치</td></tr><tr><td>14:00</td><td>Grab → KLIA 공항</td></tr><tr><td>16:40</td><td>KL→랑카위 (MH1446)</td></tr><tr><td>17:45</td><td>🏝️ 랑카위 도착!</td></tr><tr><td>18:45</td><td><strong>Dayang Bay Resort</strong> 체크인</td></tr><tr><td>19:30</td><td>리조트 근처 저녁</td></tr></table></div></div>
+</div>
+
+<!-- LANGKAWI -->
+<div id="lgk">
+<div class="ch lgk"><h2>🏝️ 여정 2: 랑카위</h2><p>2월 16일(월) ~ 20일(금) · 4박 · Dayang Bay → Lavanya BNB</p></div>
+
+<div class="dc"><div class="dh" onclick="tog(this)"><div class="dn" style="background:var(--lgk)"><span class="n">7</span><span class="l">DAY</span></div><div class="di"><div class="dt">🚡 스카이캡 & 비치 데이</div><div class="dd">2월 17일 (화)</div></div><span class="tg">▼</span></div>
+<div class="dx"><table class="sc"><tr><td>08:00</td><td>리조트 조식</td></tr><tr><td>09:30</td><td><strong>SkyCab 케이블카</strong> & <strong>Sky Bridge</strong></td></tr><tr><td>10:30</td><td><strong>Oriental Village</strong> — 3D Art, 동물농장</td></tr><tr><td>14:00</td><td><strong>Pantai Cenang</strong> 해변 🏖️</td></tr><tr><td>16:30</td><td><strong>Underwater World</strong> 수족관</td></tr><tr><td>18:00</td><td>선셋 & 해변가 저녁</td></tr></table>
+<div class="ss"><h4>✅ 체크리스트</h4><ul class="cl"><li><input type="checkbox" id="c15"><label for="c15">SkyCab 티켓 사전 예매</label></li><li><input type="checkbox" id="c16"><label for="c16">수영복 & 타월</label></li><li><input type="checkbox" id="c17"><label for="c17">자외선 차단제 꼼꼼히</label></li></ul></div>
+<div class="ss"><h4>🍽️ 식당 추천</h4><div class="rg"><div class="rc"><div class="rn">🦐 Pia's The Padi</div><div class="rd">논밭 뷰, 서양식도 가능</div></div><div class="rc"><div class="rn">🦀 Cenang 해산물</div><div class="rd">칠리크랩, 버터새우</div></div></div></div></div></div>
+
+<div class="dc"><div class="dh" onclick="tog(this)"><div class="dn" style="background:var(--lgk)"><span class="n">8</span><span class="l">DAY</span></div><div class="di"><div class="dt">🚤 아일랜드 호핑 투어 & 숙소이동</div><div class="dd">2월 18일 (수)</div></div><span class="tg">▼</span></div>
+<div class="dx"><table class="sc"><tr><td>08:00</td><td>조식 & Dayang Bay 체크아웃</td></tr><tr><td>10:00</td><td><strong>아일랜드 호핑 투어</strong> 🚤</td></tr><tr><td></td><td>— Pulau Dayang Bunting (임신한 여인의 호수)</td></tr><tr><td></td><td>— Beras Basah Island (스노클링)</td></tr><tr><td></td><td>— 독수리 먹이주기 관찰 🦅</td></tr><tr><td>14:00</td><td><strong>Lavanya BNB</strong> 체크인</td></tr><tr><td>15:00</td><td>수영장 자유시간</td></tr><tr><td>20:00</td><td>면세 쇼핑!</td></tr></table>
+<div class="ss"><h4>✅ 체크리스트</h4><ul class="cl"><li><input type="checkbox" id="c18"><label for="c18">아일랜드 호핑 사전 예약</label></li><li><input type="checkbox" id="c19"><label for="c19">스노클링 — 아이 구명조끼</label></li><li><input type="checkbox" id="c20"><label for="c20">방수 가방/파우치 필수</label></li></ul></div>
+<div class="ss"><h4>🍽️ 식당 추천</h4><div class="rg"><div class="rc"><div class="rn">🐟 Makan Mana Ikan Bakar</div><div class="rd">구운 생선 맛집</div></div><div class="rc"><div class="rn">🍛 Kapal Layar</div><div class="rd">로컬 해산물</div></div></div></div></div></div>
+
+<div class="dc"><div class="dh" onclick="tog(this)"><div class="dn" style="background:var(--lgk)"><span class="n">9</span><span class="l">DAY</span></div><div class="di"><div class="dt">🌿 맹그로브 투어 & 여유</div><div class="dd">2월 19일 (목)</div></div><span class="tg">▼</span></div>
+<div class="dx"><table class="sc"><tr><td>09:30</td><td><strong>맹그로브 보트 투어</strong> (2~3시간)</td></tr><tr><td></td><td>— 박쥐 동굴, 독수리, 맹그로브 숲</td></tr><tr><td>13:00</td><td>수상 레스토랑 점심</td></tr><tr><td>14:00</td><td>숙소 풀에서 여유 🏊</td></tr><tr><td>16:00</td><td>Pantai Tengah 해변 산책</td></tr><tr><td>18:00</td><td>선셋 & 저녁</td></tr><tr><td>20:00</td><td>내일 페낭 이동 짐정리</td></tr></table>
+<div class="ss"><h4>✅ 체크리스트</h4><ul class="cl"><li><input type="checkbox" id="c21"><label for="c21">맹그로브 투어 예약 (프라이빗 추천)</label></li><li><input type="checkbox" id="c22"><label for="c22">모기 기피제 필수!</label></li><li><input type="checkbox" id="c23"><label for="c23">내일 항공편 확인 (FY2703 18:35)</label></li></ul></div></div></div>
+
+<div class="dc"><div class="dh" onclick="tog(this)"><div class="dn" style="background:var(--lgk)"><span class="n">10</span><span class="l">DAY</span></div><div class="di"><div class="dt">✈️ 랑카위 → 페낭 이동</div><div class="dd">2월 20일 (금)</div></div><span class="tg">▼</span></div>
+<div class="dx"><table class="sc"><tr><td>10:00</td><td>Lavanya 체크아웃</td></tr><tr><td>10:30</td><td><strong>Eagle Square</strong> 독수리 광장 🦅</td></tr><tr><td>11:30</td><td>Kuah Town 면세 쇼핑</td></tr><tr><td>16:30</td><td>공항 이동</td></tr><tr><td>18:35</td><td>랑카위→페낭 (FY2703)</td></tr><tr><td>19:15</td><td>🎨 페낭 도착!</td></tr><tr><td>20:15</td><td><strong>22 Macalisterz</strong> 체크인</td></tr></table></div></div>
+</div>
+
+<!-- PENANG -->
+<div id="pen">
+<div class="ch pen"><h2>🎨 여정 3: 페낭</h2><p>2월 20일(금) ~ 26일(목) · 6박 · 22 Macalisterz → Tanjung Tokong</p></div>
+
+<div class="dc"><div class="dh" onclick="tog(this)"><div class="dn" style="background:var(--pen)"><span class="n">11</span><span class="l">DAY</span></div><div class="di"><div class="dt">🎨 조지타운 탐방 & 엄마 귀국 😢</div><div class="dd">2월 21일 (토)</div></div><span class="tg">▼</span></div>
+<div class="dx"><div class="al">⚠️ 엄마 귀국일 — MH1155 PEN→KUL 21:10 출발</div>
+<table class="sc"><tr><td>09:30</td><td><strong>조지타운 스트릿아트 투어</strong> (도보) 🚲</td></tr><tr><td>11:00</td><td><strong>Clan Jetties</strong> 씨족 부두</td></tr><tr><td>12:00</td><td><strong>New World 호커센터</strong> 점심</td></tr><tr><td>13:30</td><td>블루맨션 or 자유시간</td></tr><tr><td>15:00</td><td>Little India 구경</td></tr><tr><td>16:00</td><td>숙소 — 엄마 짐 정리</td></tr><tr><td>17:30</td><td>💕 가족 마지막 저녁</td></tr><tr><td>19:00</td><td>Grab → 페낭 공항</td></tr><tr><td>21:10</td><td>엄마 출발 (MH1155) 😢</td></tr></table>
+<div class="ss"><h4>✅ 체크리스트</h4><ul class="cl"><li><input type="checkbox" id="c24"><label for="c24">엄마 여권/항공권/짐 최종 확인</label></li><li><input type="checkbox" id="c25"><label for="c25">아이들에게 엄마 귀국 미리 설명</label></li><li><input type="checkbox" id="c26"><label for="c26">🔑 이후 5일 아빠 솔로 육아 시작!</label></li></ul></div>
+<div class="ss"><h4>🍽️ 식당 추천</h4><div class="rg"><div class="rc"><div class="rn">🍜 New World Park</div><div class="rd">차꿰이띠아우, 아삼락사</div></div><div class="rc"><div class="rn">🍛 Kapitans</div><div class="rd">Little India 탄두리</div></div><div class="rc"><div class="rn">🍰 China House</div><div class="rd">케이크 & 카페</div></div></div></div></div></div>
+
+<div class="dc"><div class="dh" onclick="tog(this)"><div class="dn" style="background:var(--pen)"><span class="n">12</span><span class="l">DAY</span></div><div class="di"><div class="dt">⛰️ 페낭힐 & 켁록시 [솔로 Day 1]</div><div class="dd">2월 22일 (일)</div></div><span class="tg">▼</span></div>
+<div class="dx"><table class="sc"><tr><td>10:00</td><td><strong>페낭 힐</strong> 푸니쿨라 열차 🚂</td></tr><tr><td>12:00</td><td>정상 레스토랑 점심</td></tr><tr><td>13:30</td><td><strong>Kek Lok Si 사원</strong></td></tr><tr><td>15:30</td><td>숙소 복귀, 풀 타임</td></tr><tr><td>18:30</td><td>저녁 (Grab 배달 OK)</td></tr></table>
+<div class="ss"><h4>✅ 체크리스트</h4><ul class="cl"><li><input type="checkbox" id="c27"><label for="c27">페낭힐 티켓 사전 예매</label></li><li><input type="checkbox" id="c28"><label for="c28">산 위 시원 — 긴팔 하나</label></li></ul></div></div></div>
+
+<div class="dc"><div class="dh" onclick="tog(this)"><div class="dn" style="background:var(--pen)"><span class="n">13</span><span class="l">DAY</span></div><div class="di"><div class="dt">🏖️ 숙소 이동 & 해변 [솔로 Day 2]</div><div class="dd">2월 23일 (월)</div></div><span class="tg">▼</span></div>
+<div class="dx"><table class="sc"><tr><td>11:00</td><td>22 Macalisterz 체크아웃</td></tr><tr><td>11:30</td><td>Grab → <strong>Tanjung Tokong</strong></td></tr><tr><td>12:00</td><td>새 숙소 체크인</td></tr><tr><td>14:00</td><td>Tanjung Bungah Beach or 풀</td></tr><tr><td>16:00</td><td><strong>Gurney Drive</strong> 산책 & 놀이공원</td></tr><tr><td>18:00</td><td><strong>Gurney Drive 호커</strong> 저녁</td></tr></table></div></div>
+
+<div class="dc"><div class="dh" onclick="tog(this)"><div class="dn" style="background:var(--pen)"><span class="n">14</span><span class="l">DAY</span></div><div class="di"><div class="dt">🎢 액티비티 데이 [솔로 Day 3]</div><div class="dd">2월 24일 (화)</div></div><span class="tg">▼</span></div>
+<div class="dx"><table class="sc"><tr><td>09:30</td><td><strong>ESCAPE Penang</strong> or <strong>Tropical Spice Garden</strong></td></tr><tr><td>14:00</td><td><strong>Batu Ferringhi Beach</strong> 🏖️</td></tr><tr><td>16:00</td><td>Wonderfood Museum or Tech Dome</td></tr><tr><td>18:00</td><td>바투 페링이 야시장 & 저녁</td></tr></table>
+<div class="ss"><h4>✅ 체크리스트</h4><ul class="cl"><li><input type="checkbox" id="c29"><label for="c29">ESCAPE Park 온라인 티켓</label></li><li><input type="checkbox" id="c30"><label for="c30">솔로 육아 시 안전 최우선!</label></li></ul></div></div></div>
+
+<div class="dc"><div class="dh" onclick="tog(this)"><div class="dn" style="background:var(--pen)"><span class="n">15</span><span class="l">DAY</span></div><div class="di"><div class="dt">🌴 휴식 & 마지막 밤 [솔로 Day 4]</div><div class="dd">2월 25일 (수)</div></div><span class="tg">▼</span></div>
+<div class="dx"><table class="sc"><tr><td>10:00</td><td>숙소 수영장 🏊</td></tr><tr><td>13:30</td><td><strong>Straits Quay</strong> 산책 & 물놀이장</td></tr><tr><td>15:00</td><td>기념품 쇼핑 🛍️</td></tr><tr><td>16:30</td><td>짐 정리 & 패킹</td></tr><tr><td>18:00</td><td>마지막 저녁 🎉</td></tr></table>
+<div class="ss"><h4>✅ 최종 체크리스트</h4><ul class="cl"><li><input type="checkbox" id="c31"><label for="c31">짐 최종 정리 & 패킹</label></li><li><input type="checkbox" id="c32"><label for="c32">항공편 재확인 (MH1143 11:00)</label></li><li><input type="checkbox" id="c33"><label for="c33">공항 9시 출발 목표</label></li><li><input type="checkbox" id="c34"><label for="c34">기념품/선물 빠짐없이</label></li><li><input type="checkbox" id="c35"><label for="c35">여권/항공권/충전기</label></li></ul></div></div></div>
+
+<div class="dc"><div class="dh" onclick="tog(this)"><div class="dn" style="background:var(--pen)"><span class="n">16</span><span class="l">DAY</span></div><div class="di"><div class="dt">✈️ 귀국! 페낭→KL→서울</div><div class="dd">2월 26일 (목)</div></div><span class="tg">▼</span></div>
+<div class="dx"><table class="sc"><tr><td>07:30</td><td>기상 & 아침식사</td></tr><tr><td>08:30</td><td>체크아웃</td></tr><tr><td>09:00</td><td>Grab → 페낭 공항 (~20분)</td></tr><tr><td>11:00</td><td>페낭→KL (MH1143)</td></tr><tr><td>12:05</td><td>KL 도착 — 빠른 환승!</td></tr><tr><td>13:25</td><td>KL→서울 (MH38)</td></tr><tr><td>20:55</td><td>🎉 <strong>인천공항 도착!</strong></td></tr></table>
+<div class="al alb">⚠️ KL 환승 시간 1시간 20분 — 매우 타이트! 수하물 through-check 반드시 확인!</div>
+<div class="ss"><h4>✅ 최종</h4><ul class="cl"><li><input type="checkbox" id="c36"><label for="c36">수하물 자동연결 확인</label></li><li><input type="checkbox" id="c37"><label for="c37">아이들 간식 & 태블릿 충전</label></li><li><input type="checkbox" id="c38"><label for="c38">🏠 무사 귀환!</label></li></ul></div></div></div>
+</div>
+
+<!-- FOOD GUIDE -->
+<div id="food">
+<h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;margin:32px 0 16px">🍜 도시별 Must-Eat 가이드</h2>
+<h3 style="color:var(--kl);margin:16px 0 8px">🏙️ 쿠알라룸푸르</h3>
+<table class="fdt"><thead><tr><th>음식</th><th>설명</th><th>아이 적합</th></tr></thead><tbody>
+<tr><td><strong>나시르막</strong></td><td>코코넛밥+삼발+멸치</td><td class="stars">⭐⭐⭐</td></tr>
+<tr><td><strong>로띠차나이</strong></td><td>인도식 납작빵+커리</td><td class="stars">⭐⭐⭐⭐</td></tr>
+<tr><td><strong>사테이</strong></td><td>꼬치구이+땅콩소스</td><td class="stars">⭐⭐⭐⭐</td></tr>
+<tr><td><strong>차꿰이띠아우</strong></td><td>볶음 쌀국수</td><td class="stars">⭐⭐⭐</td></tr>
+<tr><td><strong>떼따릭</strong></td><td>말레이 밀크티</td><td class="stars">⭐⭐⭐⭐</td></tr>
+</tbody></table>
+<h3 style="color:var(--lgk);margin:16px 0 8px">🏝️ 랑카위</h3>
+<table class="fdt"><thead><tr><th>음식</th><th>설명</th><th>아이 적합</th></tr></thead><tbody>
+<tr><td><strong>이칸바카르</strong></td><td>바나나잎 구운생선</td><td class="stars">⭐⭐⭐</td></tr>
+<tr><td><strong>칠리크랩</strong></td><td>매콤한 크랩</td><td class="stars">⭐⭐</td></tr>
+<tr><td><strong>나시캄푸르</strong></td><td>뷔페식 밥+반찬</td><td class="stars">⭐⭐⭐⭐</td></tr>
+<tr><td><strong>열대과일</strong></td><td>망고, 망고스틴</td><td class="stars">⭐⭐⭐⭐</td></tr>
+</tbody></table>
+<h3 style="color:#B8860B;margin:16px 0 8px">🎨 페낭</h3>
+<table class="fdt"><thead><tr><th>음식</th><th>설명</th><th>아이 적합</th></tr></thead><tbody>
+<tr><td><strong>아삼락사</strong></td><td>새콤한 생선국수</td><td class="stars">⭐⭐⭐</td></tr>
+<tr><td><strong>차꿰이띠아우</strong></td><td>페낭 대표 볶음면</td><td class="stars">⭐⭐⭐</td></tr>
+<tr><td><strong>나시칸다르</strong></td><td>인도-말레이 카레밥</td><td class="stars">⭐⭐⭐</td></tr>
+<tr><td><strong>완탄미</strong></td><td>중화식 국수</td><td class="stars">⭐⭐⭐⭐</td></tr>
+<tr><td><strong>아이스카캉</strong></td><td>빙수 스타일 디저트</td><td class="stars">⭐⭐⭐⭐⭐</td></tr>
+</tbody></table>
+</div>
+
+<!-- SOLO TIPS -->
+<div class="sb">
+<h3>🎒 아빠 솔로 육아 (2/21~2/26) 생존 가이드</h3>
+<div class="tips">
+<div class="tip"><span class="tn">1</span><span>일정 단순하게 — 하루 메인 1~2개 제한</span></div>
+<div class="tip"><span class="tn">2</span><span>수영장이 최고의 친구 — 숙소 풀 적극 활용</span></div>
+<div class="tip"><span class="tn">3</span><span>Grab 배달 활용 — 피곤하면 무리 No</span></div>
+<div class="tip"><span class="tn">4</span><span>안전 제일 — 해변 아이 둘 동시 관리, 구명조끼</span></div>
+<div class="tip"><span class="tn">5</span><span>둘째 낮잠 시간 확보 — 오후 1~3시 여유</span></div>
+<div class="tip"><span class="tn">6</span><span>아이들과 규칙 — 손 꼭 잡기, 신호등</span></div>
+<div class="tip"><span class="tn">7</span><span>비상 식단 — 마트에서 빵, 과일, 우유</span></div>
+<div class="tip"><span class="tn">8</span><span>여유 이동 — 항상 30분 일찍 출발</span></div>
+</div>
+</div>
+
+<!-- EMERGENCY -->
+<div class="em" id="emer">
+<h3>📞 긴급 연락처</h3>
+<div class="eg">
+<div class="ei"><strong>긴급전화</strong>999</div>
+<div class="ei"><strong>경찰</strong>112</div>
+<div class="ei"><strong>관광경찰</strong>03-2166-0044</div>
+<div class="ei"><strong>한국대사관</strong>+60-3-4251-2336</div>
+<div class="ei"><strong>의료 Emergency</strong>993</div>
+<div class="ei"><strong>소방서</strong>994</div>
+</div>
+</div>
+
+<div class="footer">
+<p>🌴 즐거운 말레이시아 가족여행 되세요! 🌴</p>
+<p style="margin-top:8px">Made with ❤️ for 정민 가족 · 2026.02.11~02.26</p>
+</div>
+</div>
+
+<script>
+function tog(el){el.closest('.dc').classList.toggle('op')}
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));event.target.classList.add('on')}
+document.querySelectorAll('.cl input[type=checkbox]').forEach(cb=>{const k='trip-'+cb.id;cb.checked=localStorage.getItem(k)==='true';cb.addEventListener('change',()=>localStorage.setItem(k,cb.checked))});
+document.querySelector('.dc')?.classList.add('op');
+</script>
 </body>
 </html>
